@@ -1,12 +1,14 @@
 import './App.css';
-import Header from './components/Header';
+import MobileHeader from "./components/MobileHeader";
+import Navlinks from "./components/Navlinks";
 
 function App() {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+	return (
+		<div>
+			<MobileHeader />
+			<Navlinks />
+		</div>
+	);
 }
 
 export default App;
