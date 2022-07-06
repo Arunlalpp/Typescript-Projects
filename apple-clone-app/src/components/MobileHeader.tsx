@@ -5,8 +5,8 @@ import globalCart from "./Images/GlobalCart.svg";
 
 function MobileHeader() {
 	return (
-		<div>
-			<div className="bg-[#1d1d1f] w-full  lg:hidden block">
+		<div className=" sticky inset-0 z-8">
+			<div className="bg-[#1d1d1f] w-full  lg:hidden block ">
 				<div className=" w-full pr-4  mx-auto max-w-[90rem] h-[48px] flex flex-row justify-between items-center lg:max-w-[980px] lg:p-[22px]">
 					<button className="text-gray-500  inset-0">
 						<Hamburger size={18} />
