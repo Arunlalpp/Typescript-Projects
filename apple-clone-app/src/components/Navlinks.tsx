@@ -5,7 +5,7 @@ import globalCart from "./Images/GlobalCart.svg";
 
 function Navlinks() {
 	return (
-		<div className="bg-[#000000] lg:block hidden">
+		<div className="bg-[#000000] lg:block hidden sticky inset-0 z-5">
 			<div className="mx-auto max-w-[980px] px-[22px] text-[#f5f5f7] text-xs">
 				<ul className="flex mx-[-8px] h-[44px] items-center justify-between">
 					<li>
