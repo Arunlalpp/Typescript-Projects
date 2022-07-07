@@ -7,7 +7,7 @@ type MankindProps = {
 function CardContainer({ url }: MankindProps) {
 	return (
 		<div className="">
-			<div className="relative">
+			<div className="relative z-[-10]">
 				<img src={url} alt="" />
 
 				<div className="absolute top-[20%] left-[40%] text-center ">
