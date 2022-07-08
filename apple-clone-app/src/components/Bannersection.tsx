@@ -16,11 +16,8 @@ function Bannersection({
 	SeriesUrl,
 	children,
 }: BannerProps) {
-	const style = {
-		backgroundColor: "",
-	};
 	return (
-		<div className="text-center bg-[#FBFBFD]" style={style}>
+		<div className="text-center  bg-[#fbfbfd]">
 			<div className="text-black">
 				<h2 className="lg:text-[56px] font-semibold  text-[32px]">{title}</h2>
 				<div className="">{children}</div>

@@ -7,16 +7,16 @@ type ButtonProps = {
 
 function Button({ ButtonText }: ButtonProps) {
     const style = {
-			fontSize: "10px",
+			fontSize: "",
 		};
 		return (
-			<span
+			<button
 				className="font-sans text-[#06c]  flex flex-row items-center"
 				style={style}
 			>
 				<span>{ButtonText}</span>
 				<MdOutlineKeyboardArrowRight className="text-[#06c]" />
-			</span>
+			</button>
 		);
 }
 
