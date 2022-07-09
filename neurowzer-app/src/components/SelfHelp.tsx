@@ -31,7 +31,7 @@ function SelfHelp({ url }: bannerProps) {
 							<br />
 							Wellness Trivia
 						</h1>
-						<p className="w-[155px] h-[32px] text-[10px] font-normal leading-4">
+						<p className="w-[155px] h-[32px] text-[10px] font-normal leading-4 font-Montetserrat">
 							Find Daily Puzzle, Quize Facts and more.
 						</p>
 					</div>
