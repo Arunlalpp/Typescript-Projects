@@ -17,11 +17,6 @@ function App() {
 			a process called oxidation, which damages brain cells."
 			/>
 			<SelfHelp url={bannerImage} />
-			{/* <ButtonStyle                                        
-				buttonText="Start Learning"
-				buttonSize="medium"
-				buttonSture="btn--primary--outline"
-			/> */}
 		</div>
 	);
 }
