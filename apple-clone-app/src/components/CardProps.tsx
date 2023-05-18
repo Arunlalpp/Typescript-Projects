@@ -28,7 +28,7 @@ function CardProps() {
 				Link={<Button ButtonText={"View pricing"} />}
 				sup={""}
 				AppleTv={""}
-				Mankidword={""}
+				ManKidWord={""}
 				Mars={""}
 			/>
 			<CardContainer
@@ -42,7 +42,7 @@ function CardProps() {
 				Link={<Button ButtonText={"Buy"} />}
 				sup={""}
 				AppleTv={""}
-				Mankidword={""}
+				ManKidWord={""}
 				Mars={""}
 			/>
 			<CardContainer
@@ -56,7 +56,7 @@ function CardProps() {
 				Link={<Button ButtonText={"Buy"} />}
 				sup={""}
 				AppleTv={""}
-				Mankidword={""}
+				ManKidWord={""}
 				Mars={""}
 			/>
 			<CardContainer
@@ -70,7 +70,7 @@ function CardProps() {
 				Link={<Button ButtonText={"Buy"} />}
 				sup={""}
 				AppleTv={""}
-				Mankidword={""}
+				ManKidWord={""}
 				Mars={""}
 			/>
 			<CardContainer
@@ -84,7 +84,7 @@ function CardProps() {
 				Link={<Button ButtonText={"Try it free"} />}
 				sup="2"
 				AppleTv={""}
-				Mankidword={""}
+				ManKidWord={""}
 				Mars={""}
 			/>
 			<CardContainer
@@ -98,7 +98,7 @@ function CardProps() {
 				Title={""}
 				sup={""}
 				AppleTv={AppleTv}
-				Mankidword={MankindWord}
+				ManKidWord={MankindWord}
 				Mars={Mars}
 			/>
 		</div>

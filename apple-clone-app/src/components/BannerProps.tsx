@@ -1,5 +1,5 @@
 import React from "react";
-import Bannersection from "./Bannersection";
+import BannerSection from "./BannerSection";
 import Button from "./Shared/Button";
 import bannerImage from "./Images/Bannerimage.jpg";
 import WatchLogo from "./Images/WatchLogo.png";
@@ -18,21 +18,21 @@ function BannerProps() {
 					</div>
 				</span>
 			</div>
-			<Bannersection
+			<BannerSection
 				url={bannerImage}
 				title="iphone 13"
 				SubText="Your new superpower"
 				SeriesUrl={""}
 				children={""}
 			/>
-			<Bannersection
+			<BannerSection
 				url={AppleWatch}
 				SeriesUrl={WatchLogo}
 				SubText="It’s our largest display yet."
 				title={""}
 				children={""}
 			/>
-			<Bannersection
+			<BannerSection
 				url={SuperCharged}
 				SeriesUrl={""}
 				SubText="Save on Mac or iPad. Plus get AirPods."
@@ -44,7 +44,7 @@ function BannerProps() {
 						university
 					</span>
 				</div>
-			</Bannersection>
+			</BannerSection>
 		</>
 	);
 }

@@ -9,7 +9,7 @@ type BannerProps = {
 	children: React.ReactNode;
 };
 
-function Bannersection({
+function BannerSection({
 	title,
 	url,
 	SubText,
@@ -37,4 +37,4 @@ function Bannersection({
 	);
 }
 
-export default Bannersection;
+export default BannerSection;
