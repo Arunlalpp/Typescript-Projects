@@ -8,17 +8,17 @@ interface AppProps {
 }
 function App({ whatsappCard }: AppProps) {
   return (
-    <div>
+    <div className="">
       {whatsappCard.map((whatsappCard) => {
         return (
-          <>
+          <div className="pb-4">
             <CardTitle
               description={whatsappCard.description}
               header={whatsappCard.header}
               title={whatsappCard.title}
               imageURL={whatsappCard.imageURL}
             />
-          </>
+          </div>
         );
       })}
     </div>
