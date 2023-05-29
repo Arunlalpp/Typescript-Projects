@@ -9,7 +9,7 @@ export interface CardTitleProps {
 
 function CardTitle({ header, title, description, imageURL }: CardTitleProps) {
   return (
-    <div className="bg-[#000000] rounded-xl px-8 py-6 flex flex-col justify-between">
+    <div className="bg-[#111b21] rounded-xl px-8 py-6 flex flex-col justify-between">
       <div className="flex flex-col items-center text-center text-white">
         <p className="text-xs font-normal pb-2">{header}</p>
         <p className="text-2xl font-semibold pb-5">{title}</p>

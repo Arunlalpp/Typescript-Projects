@@ -10,7 +10,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App whatsappCard={defaultWhatsappCardData.whatsappCard} />
+    <App
+      whatsappCard={defaultWhatsappCardData.whatsappCard}
+      homePageData={defaultWhatsappCardData.homePage}
+    />
   </React.StrictMode>
 );
 

@@ -22,7 +22,12 @@ export default {
       title: "iOS",
     },
   ],
-  socialMedia:{
-    imageURL:['https://twitter.com/whatsapp',]
-  }
+  homePage: {
+    headerText: "Download Whatsapp",
+    description:
+      "Stay connected on WhatsApp across your devices, so you can pick up any conversation where you left off.",
+    mainTitle: "By installing WhatsApp, you agree to our",
+    subTitle: "Terms",
+    subTitle2: "Privacy Policy",
+  },
 };

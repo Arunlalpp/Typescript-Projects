@@ -1,26 +1,30 @@
 import React from "react";
 import CardTitle from "./components/CardTitle";
 
-import { WhatsappCard } from "./types";
+import { Homepage, WhatsappCard } from "./types";
+import { SocialMedia } from "./components/SocialMedia";
+import { Header } from "./components/Header";
+import { HomePage } from "./Pages/HomePage";
+import defaultWhatsappCardData from "../src/data";
 
 interface AppProps {
   whatsappCard: WhatsappCard[];
+  homePageData: Homepage;
 }
-function App({ whatsappCard }: AppProps) {
+
+function App({ homePageData }: AppProps) {
   return (
-    <div className="">
-      {whatsappCard.map((whatsappCard) => {
-        return (
-          <div className="pb-4">
-            <CardTitle
-              description={whatsappCard.description}
-              header={whatsappCard.header}
-              title={whatsappCard.title}
-              imageURL={whatsappCard.imageURL}
-            />
-          </div>
-        );
-      })}
+    <div className="max-w-[1080px] h-full mx-auto px-6 bg-[#E6FFDA]">
+      <Header />
+      <div className="h-16" />
+      <HomePage
+        description={homePageData.description}
+        headerText={homePageData.headerText}
+        mainTitle={homePageData.mainTitle}
+        subTitle={homePageData.subTitle}
+        subTitle2={homePageData.subTitle2}
+        whatsappCard={defaultWhatsappCardData.whatsappCard}
+      />
     </div>
   );
 }
