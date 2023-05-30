@@ -14,7 +14,7 @@ interface AppProps {
 
 function App({ homePageData }: AppProps) {
   return (
-    <div className="max-w-[1080px] h-full mx-auto px-6 bg-[#E6FFDA]">
+    <div className="md:max-w-[1080px] h-full mx-auto px-6 bg-[#E6FFDA]">
       <Header />
       <div className="h-16" />
       <HomePage
