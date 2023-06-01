@@ -16,7 +16,7 @@ function CardTitle({ header, title, description, imageURL }: CardTitleProps) {
         <p className="text-xs font-normal pb-8">{description}</p>
       </div>
       <div className="h-full w-full flex justify-center items-center relative top-4">
-        <img className="h-[100px] w-[232px]" src={imageURL} alt="card-url"      />
+        <img className="h-[100px] w-[232px]" src={imageURL} alt="card-url"/>
       </div>
     </div>
   );
