@@ -1,7 +1,7 @@
 import React from "react";
 import CardTitle from "./components/CardTitle";
 
-import { Homepage, WhatsappCard } from "./types";
+import { FooterPage, Homepage, WhatsappCard } from "./types";
 import { SocialMedia } from "./components/SocialMedia";
 import { Header } from "./components/Header";
 import { HomePage } from "./Pages/HomePage";
@@ -12,9 +12,10 @@ import { Footer } from "./components/Footer";
 interface AppProps {
   whatsappCard: WhatsappCard[];
   homePageData: Homepage;
+  footerPage: FooterPage[];
 }
 
-function App({ homePageData }: AppProps) {
+function App({ homePageData, footerPage }: AppProps) {
   return (
     <>
       <div className="px-6 bg-[#E6FFDA] rounded-2xl">
@@ -36,7 +37,7 @@ function App({ homePageData }: AppProps) {
         <div className="pb-4">
           <SocialMedia />
         </div>
-        <Footer />
+        <Footer footerData={footerPage} />
       </div>
     </>
   );

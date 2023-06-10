@@ -13,6 +13,7 @@ root.render(
     <App
       whatsappCard={defaultWhatsappCardData.whatsappCard}
       homePageData={defaultWhatsappCardData.homePage}
+      footerPage={defaultWhatsappCardData.footerContent}
     />
   </React.StrictMode>
 );

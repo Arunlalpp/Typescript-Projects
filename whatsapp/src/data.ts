@@ -30,4 +30,27 @@ export default {
     subTitle: "Terms",
     subTitle2: "Privacy Policy",
   },
+  footerContent: [
+    {
+      header: "Sample",
+      subTitle: "Sample",
+    },
+    {
+      header: "",
+      subTitle: "",
+    },
+    {
+      header: "",
+      subTitle: "",
+    },
+    {
+      header: "",
+      subTitle: "",
+    },
+    {
+      header: "",
+      subTitle: "",
+    },
+  ],
+  imageURL: "https://static.whatsapp.net/rsrc.php/v3/yJ/r/Qhrnh5evyPV.png",
 };

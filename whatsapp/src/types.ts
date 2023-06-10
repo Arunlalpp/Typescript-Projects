@@ -14,3 +14,8 @@ export interface Homepage {
   subTitle: string;
   subTitle2: string;
 }
+
+export interface FooterPage {
+  header: string;
+  subTitle: string;
+}

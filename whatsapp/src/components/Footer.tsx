@@ -1,6 +1,11 @@
 import React from "react";
+import { FooterPage } from "../types";
 
-export function Footer() {
+export interface FooterProps {
+  footerData: FooterPage[];
+}
+
+export function Footer({ footerData }: FooterProps) {
   return (
     <div className="px-8">
       <img
@@ -8,14 +13,16 @@ export function Footer() {
         src="https://static.whatsapp.net/rsrc.php/v3/yJ/r/Qhrnh5evyPV.png"
         alt=""
       />
-      <div>
-        <ul>
-          <span>What we do</span>
-          <li>Sample</li>
-          <li>Sample</li>
-          <li>Sample</li>
-        </ul>
-      </div>
+      {footerData.map((footer) => {
+        return (
+          <div>
+            <ul>
+              <span>{footer.header}</span>
+              <li>{footer.subTitle}</li>
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 }
