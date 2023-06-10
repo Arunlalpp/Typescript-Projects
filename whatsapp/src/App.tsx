@@ -6,7 +6,9 @@ import { SocialMedia } from "./components/SocialMedia";
 import { Header } from "./components/Header";
 import { HomePage } from "./Pages/HomePage";
 import defaultWhatsappCardData from "../src/data";
-
+import { Button } from "./components/Button";
+import { ReactComponent as Download } from ".././src/assets/Download.svg";
+import { Footer } from "./components/Footer";
 interface AppProps {
   whatsappCard: WhatsappCard[];
   homePageData: Homepage;
@@ -14,18 +16,29 @@ interface AppProps {
 
 function App({ homePageData }: AppProps) {
   return (
-    <div className="md:max-w-[1080px] h-full mx-auto px-6 bg-[#E6FFDA]">
-      <Header />
-      <div className="h-16" />
-      <HomePage
-        description={homePageData.description}
-        headerText={homePageData.headerText}
-        mainTitle={homePageData.mainTitle}
-        subTitle={homePageData.subTitle}
-        subTitle2={homePageData.subTitle2}
-        whatsappCard={defaultWhatsappCardData.whatsappCard}
-      />
-    </div>
+    <>
+      <div className="px-6 bg-[#E6FFDA] rounded-2xl">
+        <Header />
+        <div className="h-16" />
+        <HomePage
+          description={homePageData.description}
+          headerText={homePageData.headerText}
+          mainTitle={homePageData.mainTitle}
+          subTitle={homePageData.subTitle}
+          subTitle2={homePageData.subTitle2}
+          whatsappCard={defaultWhatsappCardData.whatsappCard}
+        />
+      </div>
+      <div className="flex justify-center flex-col bg-[#111b21]">
+        <div className="flex justify-center items-center w-1/2 mx-auto py-4">
+          <Button text="Download" icon={<Download />} />
+        </div>
+        <div className="pb-4">
+          <SocialMedia />
+        </div>
+        <Footer />
+      </div>
+    </>
   );
 }
 

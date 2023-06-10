@@ -49,6 +49,13 @@ export function HomePage({
             </div>
           );
         })}
+        <div className="text-center">
+          <p>
+            Visit
+            <a href="https://www.whatsapp.com/download"></a> on your mobile
+            phone to install
+          </p>
+        </div>
       </div>
     </>
   );
