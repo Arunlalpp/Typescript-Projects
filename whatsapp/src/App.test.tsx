@@ -8,7 +8,7 @@ test("renders learn react link", () => {
     <App
       homePageData={defaultWhatsappCardData.homePage}
       whatsappCard={defaultWhatsappCardData.whatsappCard}
-      footerPage={defaultWhatsappCardData.footerContent}
+      footerPage={defaultWhatsappCardData.footerLinks}
     />
   );
   const linkElement = screen.getByText(/learn react/i);

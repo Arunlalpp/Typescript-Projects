@@ -15,7 +15,12 @@ export interface Homepage {
   subTitle2: string;
 }
 
+export interface Contents {
+  text: string;
+  link: string;
+}
+
 export interface FooterPage {
-  header: string;
-  subTitle: string;
+  contents: Contents[];
+  title: string;
 }

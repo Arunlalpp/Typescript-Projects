@@ -30,27 +30,94 @@ export default {
     subTitle: "Terms",
     subTitle2: "Privacy Policy",
   },
-  footerContent: [
+  footerLinks: [
     {
-      header: "Sample",
-      subTitle: "Sample",
+      title: "What we do",
+      contents: [
+        {
+          text: "Features",
+          link: "",
+        },
+        {
+          text: "Blog",
+          link: "",
+        },
+        {
+          text: "security",
+          link: "",
+        },
+        {
+          text: "For Business",
+          link: "",
+        },
+      ],
     },
     {
-      header: "",
-      subTitle: "",
+      title: "Who we are",
+      contents: [
+        {
+          text: "About Us",
+          link: "",
+        },
+        {
+          text: "Careers",
+          link: "",
+        },
+        {
+          text: "Brand Center",
+          link: "",
+        },
+        {
+          text: "Privacy",
+          link: "",
+        },
+        {
+          text: "Donate",
+          link: "",
+        },
+      ],
     },
     {
-      header: "",
-      subTitle: "",
+      title: "Use Whatsapp",
+      contents: [
+        {
+          text: "Android",
+          link: "",
+        },
+        {
+          text: "Iphone",
+          link: "",
+        },
+        {
+          text: "Mac/PC",
+          link: "",
+        },
+        {
+          text: "Whatsapp Web",
+          link: "",
+        },
+      ],
     },
     {
-      header: "",
-      subTitle: "",
-    },
-    {
-      header: "",
-      subTitle: "",
+      title: "Need help?",
+      contents: [
+        {
+          text: "Contact Us",
+          link: "",
+        },
+        {
+          text: "Help Center",
+          link: "",
+        },
+        {
+          text: "CoronaVirus",
+          link: "",
+        },
+        {
+          text: "Security Advisories",
+          link: "",
+        },
+      ],
     },
   ],
-  imageURL: "https://static.whatsapp.net/rsrc.php/v3/yJ/r/Qhrnh5evyPV.png",
 };
