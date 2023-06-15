@@ -36,6 +36,7 @@ export function HomePage({
           </div>
         </div>
       </div>
+      <div className="h-14" />
       <div className="md:flex md:gap-6">
         {whatsappCard.map((whatsappCard) => {
           return (
@@ -49,13 +50,14 @@ export function HomePage({
             </div>
           );
         })}
-        <div className="text-center">
-          <p>
-            Visit
-            <a href="https://www.whatsapp.com/download"></a> on your mobile
-            phone to install
-          </p>
-        </div>
+      </div>
+      <div className="h-8" />
+      <div className="text-center md:flex-col justify-center py-5">
+        <p>
+          Visit
+          <a href="https://www.whatsapp.com/download"></a> on your mobile phone
+          to install
+        </p>
       </div>
     </>
   );

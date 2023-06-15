@@ -12,7 +12,7 @@ function CardTitle({ header, title, description, imageURL }: CardTitleProps) {
   const [hasHoverCard, setHasHoverCard] = useState(false);
 
   const cardHoverStyle = classNames(
-    "rounded-xl px-8 py-6 flex flex-col justify-between",
+    "rounded-xl px-6 pb-14 pt-7 flex flex-col justify-between",
     { "bg-[#111b21]": !hasHoverCard, "bg-[#25d366]": hasHoverCard }
   );
 
