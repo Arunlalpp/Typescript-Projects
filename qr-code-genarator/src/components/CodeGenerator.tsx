@@ -6,7 +6,7 @@ export default function CodeGenerator() {
   const [value, setValue] = useState();
   const [back, setBack] = useState("#FFFFFF");
   const [force, setForce] = useState("#000000");
-  const [size, setSize] = useState(256);
+  const [size, setSize] = useState<any>(256);
   const [qrUrl, setQRUrl] = useState("");
 
   const inputStyles = classNames(
@@ -55,6 +55,7 @@ export default function CodeGenerator() {
       <input
         className={inputStyles}
         type="text"
+        placeholder="Size of Qr-code"
         onChange={(e: any) =>
           setSize(parseInt(e.target.value === "" ? 0 : e.target.value, 10))
         }
@@ -88,7 +89,7 @@ export default function CodeGenerator() {
               value={value}
               bgColor={back}
               fgColor={force}
-              size={size === 0 ? 0 : size}
+              size={size === "" ? 0 : size}
             />
           </div>
         </div>
