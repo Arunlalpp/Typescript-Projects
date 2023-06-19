@@ -8,7 +8,7 @@ export interface FooterProps {
 export function Footer({ footerData }: FooterProps) {
   return (
     <div>
-      <div className="py-6 grid grid-cols-2 md:flex flex-row justify-between px-8  border-b">
+      <div className="py-6 grid grid-cols-2 md:flex flex-row justify-between border-b">
         {footerData?.map((footerLink) => {
           return (
             <div className=" text-[#F0F4F9]">

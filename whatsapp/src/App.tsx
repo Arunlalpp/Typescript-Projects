@@ -17,8 +17,8 @@ interface AppProps {
 
 function App({ homePageData, footerPage }: AppProps) {
   return (
-    <>
-      <div className="px-6 bg-[#E6FFDA] rounded-2xl">
+    <div className="bg-[#E6FFDA]">
+      <div className="rounded-2xl  max-w-[85%] mx-auto">
         <Header />
         <div className="h-16" />
         <HomePage
@@ -32,14 +32,14 @@ function App({ homePageData, footerPage }: AppProps) {
       </div>
       <div className="flex justify-center flex-col bg-[#111b21]">
         <div className="flex justify-center items-center w-1/2 mx-auto py-4">
-          <Button text="Download" icon={<Download />} />
+          <Button text="Download" icon={<Download />} onClick={() => {}} />
         </div>
         <div className="pb-4">
           <SocialMedia />
         </div>
         <Footer footerData={footerPage} />
       </div>
-    </>
+    </div>
   );
 }
 
