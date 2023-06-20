@@ -67,13 +67,13 @@ export default function CodeGenerator() {
               onSubmit={downloadQRCode}
               className="flex flex-col justify-center items-center gap-4"
             >
-              <label className="text-lg font-medium">Enter URL</label>
+              <label className="text-lg font-medium">Paste URL</label>
               <input
                 className={inputStyles}
                 type="text"
                 value={qrUrl}
                 onChange={qrCodeEncoder}
-                placeholder="https://www.whatsapp.com/download"
+                placeholder="URL"
               />
               <button
                 type="submit"
