@@ -59,6 +59,9 @@ export default function Header() {
               <Link className="ml-8 text-white" to="/Contact">
                 Contact
               </Link>
+              <Link className="ml-8 text-white" to="/Contact">
+                Contact
+              </Link>
             </ul>
             <button
               type="button"
@@ -79,7 +82,7 @@ export default function Header() {
           <i className="fa fa-user p-[10px] h-10 text-center rounded-[50%] border border-solid border-white mx-0 my-2 text-white"></i>
           <button
             type="button"
-            className="bg-[#e50813] outline-none border-none text-white px-7 py-2 text-base rounded-xl font-medium" 
+            className="bg-[#e50813] outline-none border-none text-white px-7 py-2 text-base rounded-xl font-medium"
           >
             Subscribe Now
           </button>
