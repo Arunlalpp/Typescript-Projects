@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import classNames from "classnames";
 
-export default function Header() {
+export interface HeaderProps {
+  links: string[];
+}
+
+export default function Header({ links }: HeaderProps) {
   const [mobile, setMobile] = useState(false);
 
   const buttonStyle = classNames(
-    "bg-[#e50813] outline-none border-none text-white px-3 py-2 text-base rounded-xl font-medium",
+    "bg-red outline-none border-none text-white px-3 py-2 text-base rounded-xl font-medium",
     {
       "block absolute top-0 bottom-0 right-[20px] m-auto bg-none": mobile,
     }
@@ -36,32 +40,16 @@ export default function Header() {
             <ul
               className={
                 mobile
-                  ? "flex flex-col absolute top-0 left-0 bg-[#e50813] w-1/2 h-screen z-50 gap-10"
+                  ? "flex flex-col absolute top-0 left-0 bg-red w-1/2 h-screen z-50 gap-10"
                   : "block"
               }
               onClick={handleClose}
             >
-              <Link className="ml-8 text-white" to="/">
-                Home
-              </Link>
-              <Link className="ml-8 text-white" to="/Series">
-                Series
-              </Link>
-              <Link className="ml-8 text-white" to="/Movies">
-                Movies
-              </Link>
-              <Link className="ml-8 text-white" to="/Pages">
-                Pages
-              </Link>
-              <Link className="ml-8 text-white" to="/Pricing">
-                Pricing
-              </Link>
-              <Link className="ml-8 text-white" to="/Contact">
-                Contact
-              </Link>
-              <Link className="ml-8 text-white" to="/Contact">
-                Contact
-              </Link>
+              {links.map((link) => (
+                <Link className="ml-8 text-white hover:text-red" to="/">
+                  {link}
+                </Link>
+              ))}
             </ul>
             <button
               type="button"
@@ -77,12 +65,12 @@ export default function Header() {
           </div>
         </div>
         <div className={button}>
-          <i className="fa fa-search p-[10px] h-10 text-center rounded-[50%] border border-solid border-white mx-0 my-2 text-white"></i>
-          <i className="fa fa-bell p-[10px] h-10 text-center rounded-[50%] border border-solid border-white mx-0 my-2 text-white"></i>
-          <i className="fa fa-user p-[10px] h-10 text-center rounded-[50%] border border-solid border-white mx-0 my-2 text-white"></i>
+          <i className="fa fa-search hover:border-red hover:shadow-2xl cursor-pointer p-2.5 h-10 text-center rounded-[50%]  border-[3px] border-white mx-0 my-2 text-white"></i>
+          <i className="fa fa-bell hover:border-red hover:shadow-2xl cursor-pointer p-2.5 h-10 text-center rounded-[50%]  border-[3px] border-white mx-0 my-2 text-white"></i>
+          <i className="fa fa-user hover:border-red hover:shadow-2xl cursor-pointer p-2.5 h-10 text-center rounded-[50%]  border-[3px] border-white mx-0 my-2 text-white"></i>
           <button
             type="button"
-            className="bg-[#e50813] outline-none border-none text-white px-7 py-2 text-base rounded-xl font-medium"
+            className="bg-red outline-none border-none text-white px-7 py-2 text-base rounded-xl font-medium"
           >
             Subscribe Now
           </button>

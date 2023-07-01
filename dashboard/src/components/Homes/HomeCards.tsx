@@ -8,29 +8,29 @@ import Texture from "../../assets/texure.jpg";
 export interface HomeCardsProps {
   cover: string;
   description: string;
+  genres: string;
+  id: number;
   name: string;
   rating: number;
-  time: string;
   starring: string;
-  genres: string;
   tags: string;
-  id: number;
+  time: string;
 }
 
 export default function HomeCards({
   cover,
   description,
+  genres,
+  id,
   name,
   rating,
-  time,
   starring,
-  genres,
   tags,
-  id,
+  time,
 }: HomeCardsProps) {
   return (
     <div className="relative inset-0 flex justify-center w-full h-full">
-      <div className="absolute top-0 w-full h-screen -z-10">
+      <div className="absolute top-0 w-full h-screen -z-10 coverImage">
         <img className="w-full" src={cover} alt="cover" />
       </div>
       <div className="p-[100px]">
@@ -45,39 +45,39 @@ export default function HomeCards({
           {name}
         </h1>
         <div className="mx- my-0">
-          <i className="fas fa-star text-[#e50813] mr-1"></i>
-          <i className="fas fa-star text-[#e50813] mr-1"></i>
-          <i className="fas fa-star text-[#e50813] mr-1"></i>
-          <i className="fas fa-star text-[#e50813] mr-1"></i>
-          <i className="fas fa-star-half text-[#e50813] mr-1"></i>
+          <i className="fas fa-star text-red mr-1"></i>
+          <i className="fas fa-star text-red mr-1"></i>
+          <i className="fas fa-star text-red mr-1"></i>
+          <i className="fas fa-star text-red mr-1"></i>
+          <i className="fas fa-star-half text-red mr-1"></i>
         </div>
         <div className="w-1/2">
           <label className="mx-0 my-5">{rating}</label>
-          <span className="bg-[#6c757d] p-1 text-white font-bold">GP</span>
+          <span className="bg-gray p-1 text-white font-bold">GP</span>
           <label className="mx-0 my-5">{time}</label>
           <p className="leading-8">{description}</p>
         </div>
         <div className="my-8">
-          <h4 className="font-medium mt-3 text-[20px]">
-            <span className="text-[#e50813]">Starring</span>
+          <h4 className="font-medium mt-3 text-xl">
+            <span className="text-red">Starring</span>
             {starring}
           </h4>
-          <h4 className="font-medium mt-3 text-[20px]">
-            <span className="text-[#e50813]">Genres</span>
+          <h4 className="font-medium mt-3 text-xl">
+            <span className="text-red">Genres</span>
             {genres}
           </h4>
-          <h4 className="font-medium mt-3 text-[20px]">
-            <span className="text-[#e50813]">Tags</span>
+          <h4 className="font-medium mt-3 text-xl">
+            <span className="text-red">Tags</span>
             {tags}
           </h4>
         </div>
-        <button className="bg-[#e50813] outline-none border-none text-white px-7 py-3 text-base rounded-xl font-medium flex justify-center items-center gap-x-4">
+        <button className="bg-red outline-none border-none text-white px-7 py-3 text-base rounded-xl font-medium flex justify-center items-center gap-x-4">
           <i className="fas fa-play"></i>PLAY NOW
         </button>
       </div>
       <div className="flex items-center justify-center">
         <Link to={`/singlepage/${id}`}>
-          <button className="bg-none outline-none border-none hover:text-[#e50813] text-white px-7 py-2 text-xl whitespace-nowrap rounded-xl font-bold transition-all cursor-pointer flex items-center justify-center">
+          <button className="bg-none outline-none border-none hover:text-red text-white px-7 py-2 text-xl whitespace-nowrap rounded-xl font-bold transition-all cursor-pointer flex items-center justify-center">
             <div className="relative w-[90px] h-[90px] mr-5 transition-all">
               <img src={PlayButton} alt="play" />
               <img
