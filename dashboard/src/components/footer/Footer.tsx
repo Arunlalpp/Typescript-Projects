@@ -12,7 +12,7 @@ export default function Footer({ description, lists }: FooterProps) {
       <div>
         <ul className="flex justify-between mb-8">
           {lists.map((list) => (
-            <li className="mr-8">{list}</li>
+            <li className="mr-8 hover:border-b-red hover:border-b-2 border-b-transparent cursor-pointer">{list}</li>
           ))}
         </ul>
         <p>{description}</p>
