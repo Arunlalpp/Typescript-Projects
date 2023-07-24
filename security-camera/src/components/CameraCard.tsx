@@ -26,6 +26,7 @@ const renderSection=()=>{
             <button type="button">Click Right</button>
           </div>
           <div className="h-2 w-2 text-green-800" />
+          <div className="h-2 w-2 text-green-800" />
         </div>
       </div>
     </div>
