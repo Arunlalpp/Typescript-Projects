@@ -25,16 +25,18 @@ export default function StudentsDetailsTable() {
     "Action",
   ];
 
+  // const currentStudentMarkInfo = [
+  //   { subject: "English", mark: 25 },
+  //   { subject: "Maths", mark: 48 },
+  //   { subject: "Physics", mark: 40 },
+  //   { subject: "Chemistry", mark: 30 },
+  //   { subject: "Computer", mark: 20 },
+  // ];
+
   const currentStudentInfo = {
     id: "",
     name: "",
-    marks: [
-      { subject: "English", mark: 25 },
-      { subject: "Maths", mark: 48 },
-      { subject: "Physics", mark: 40 },
-      { subject: "Chemistry", mark: 30 },
-      { subject: "Computer", mark: 20 },
-    ],
+    marks: [],
   };
 
   const [students, setStudents] = useState<Students[]>([]);
@@ -74,6 +76,14 @@ export default function StudentsDetailsTable() {
     }));
   };
 
+  const handleMarks = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // const { id, marks } = event.target;
+    setCurrentStudent((prevStudent) => ({
+      ...prevStudent,
+      // [marks]: {},
+    }));
+  };
+console.log("object")
   return (
     <div>
       <div className="flex justify-around items-center w-full">
@@ -91,6 +101,25 @@ export default function StudentsDetailsTable() {
             </span>
           </span>
         </div>
+        <>
+                    {StudentSubjects.forEach((subject) => {
+                      console.log("here", subject);
+
+                      return (
+                        <div key={subject}>
+                          <label className="px-2">{subject}</label>
+                          <input
+                            className="p-2 rounded-2xl border-2 border-red-950"
+                            id={subject}
+                            onChange={handleMarks}
+                            placeholder={`Enter your ${subject}`}
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      );
+                    })}
+                  </>
         {isPopupOpen && (
           <Popup>
             <div className="flex justify-center items-center">
@@ -114,15 +143,8 @@ export default function StudentsDetailsTable() {
                     type="text"
                     value={currentStudent.id}
                   />
-                  <label className="px-2">{hardCodedValues.marks}</label>
-                  <input
-                    className="p-2 rounded-2xl border-2 border-red-950"
-                    id="id"
-                    onChange={handleInputValueChange}
-                    placeholder="Enter your id"
-                    type="text"
-                    value={currentStudent.marks[0].subject}
-                  />
+                 
+
                   <button
                     className="p-2 border border-black bg-green-900 w-full rounded-xl"
                     type="button"
