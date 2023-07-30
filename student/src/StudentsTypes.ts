@@ -1,9 +1,9 @@
 export interface Marks {
   subject: string;
-  mark: number;
+  mark?: number;
 }
 
-export interface Students {
+export interface Student {
   name: string;
   id: string;
   marks: Marks[];
@@ -12,5 +12,5 @@ export interface Students {
 export interface StudentsData {
   name: string;
   teacherName: string;
-  students: Students[];
+  students: Student[];
 }

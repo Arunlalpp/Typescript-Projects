@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Students } from "../StudentsTypes";
+import { Student } from "../StudentsTypes";
 
 export default function StudentsDetails() {
   const initialStudentsInfo = {
@@ -8,9 +8,9 @@ export default function StudentsDetails() {
     name: "",
     marks: [],
   };
-  const [studentsInfo, setStudentsInfo] = useState<Students[]>([]);
+  const [studentsInfo, setStudentsInfo] = useState<Student[]>([]);
   const [currentStudent, setCurrentStudent] =
-    useState<Students>(initialStudentsInfo);
+    useState<Student>(initialStudentsInfo);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +38,7 @@ export default function StudentsDetails() {
     setCurrentStudent(initialStudentsInfo);
   };
 
-  const handleEditStudent = (student: Students) => {
+  const handleEditStudent = (student: Student) => {
     setIsEditing(true);
     setCurrentStudent(student);
   };

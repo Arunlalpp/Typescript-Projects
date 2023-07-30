@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   name: "class A",
-  teacherName: "Aundrey Bitony",
+  teacherName: "Bhavani Amma",
   students: [
     {
       name: "Ravi",

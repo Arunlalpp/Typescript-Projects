@@ -2,7 +2,10 @@ import React, { useState } from "react";
 
 import defaultStudentsData from "../StudentsData";
 import { Popup } from "./PopupModal";
-import { Students } from "../StudentsTypes";
+import { Student } from "../StudentsTypes";
+import Cross from "../assets/Cross.png";
+import Button, { ButtonTypes } from "./Button";
+// import { Input } from "./input";
 
 export default function StudentsDetailsTable() {
   // This is the hardcoded values
@@ -13,10 +16,8 @@ export default function StudentsDetailsTable() {
     id: "ID",
     marks: "Enter your marks",
   };
-  // const studentsInfo = defaultStudentsData.students;
-
-  const tableHeaderData = ["name", "id"];
-  const StudentSubjects = [
+  const tableHeaderData = ["Name", "ID"];
+  const studentSubjects = [
     "English",
     "Maths",
     "Physics",
@@ -25,33 +26,31 @@ export default function StudentsDetailsTable() {
     "Action",
   ];
 
-  // const currentStudentMarkInfo = [
-  //   { subject: "English", mark: 25 },
-  //   { subject: "Maths", mark: 48 },
-  //   { subject: "Physics", mark: 40 },
-  //   { subject: "Chemistry", mark: 30 },
-  //   { subject: "Computer", mark: 20 },
-  // ];
-
   const currentStudentInfo = {
     id: "",
     name: "",
-    marks: [],
+    marks: [
+      { subject: "English" },
+      { subject: "Maths" },
+      { subject: "Physics" },
+      { subject: "Chemistry" },
+      { subject: "Computer" },
+    ],
   };
 
-  const [students, setStudents] = useState<Students[]>([]);
+  const [students, setStudents] = useState<Student[]>([]);
   const [currentStudent, setCurrentStudent] =
-    useState<Students>(currentStudentInfo);
+    useState<Student>(currentStudentInfo);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const addStudent = () => {
     setIsPopupOpen(true);
   };
 
-  const handleClosePopup = (event: any) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     setStudents([...students, currentStudent]);
     setIsPopupOpen(false);
+    setCurrentStudent(currentStudentInfo);
   };
 
   const clearStudentsList = () => {
@@ -59,7 +58,7 @@ export default function StudentsDetailsTable() {
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target as HTMLInputElement;
     setCurrentStudent((prevStudent) => ({
       ...prevStudent,
       [name]: value,
@@ -76,14 +75,40 @@ export default function StudentsDetailsTable() {
     }));
   };
 
-  const handleMarks = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // const { id, marks } = event.target;
-    setCurrentStudent((prevStudent) => ({
-      ...prevStudent,
-      // [marks]: {},
-    }));
+  const handleMarks = (marks: number, subject: string) => {
+    console.log(
+      "🚀 ~ file: StudentsDetailsTable.tsx:83 ~ handleMarks ~ marks:",
+      marks
+    );
+    if (isNaN(marks)) return;
+    setCurrentStudent((prevStudent) => {
+      const stu = {
+        ...prevStudent,
+        marks: prevStudent.marks.map((markObj) => {
+          if (markObj.subject === subject) {
+            return { ...markObj, mark: marks };
+          }
+          return markObj;
+        }),
+      };
+      console.log(stu);
+      return stu;
+    });
   };
-console.log("object")
+
+  const handleDeleteStudent = (id: string) => {
+    console.log(id);
+
+    setStudents((prevStudents) => {
+      return prevStudents.filter((students) => students.id !== id);
+    });
+  };
+
+  const handleStudentEditClick = (student: Student) => {
+    setCurrentStudent(student);
+    setIsPopupOpen(true);
+  };
+
   return (
     <div>
       <div className="flex justify-around items-center w-full">
@@ -101,77 +126,86 @@ console.log("object")
             </span>
           </span>
         </div>
-        <>
-                    {StudentSubjects.forEach((subject) => {
-                      console.log("here", subject);
-
+        {isPopupOpen && (
+          <Popup>
+            <div className="vghwvhw">
+              <div className="flex justify-end items-center px-4">
+                <button type="button" onClick={() => setIsPopupOpen(false)}>
+                  <img className="w-full h-full" src={Cross} alt="cross" />
+                </button>
+              </div>
+              <div className="flex justify-center items-center">
+                <form>
+                  <div className="flex flex-col justify-center gap-4">
+                    <label className="px-2">{hardCodedValues.name}</label>
+                    <input
+                      className="p-2 rounded-2xl border-2 border-red-950"
+                      name="name"
+                      onChange={handleInputChange}
+                      placeholder="Enter your name"
+                      type="text"
+                      value={currentStudent.name}
+                    />
+                    {/* <Input
+                      onChange={handleInputChange}
+                      placeholderText="Enter your name"
+                      value={currentStudent.name}
+                    /> */}
+                    <label className="px-2">{hardCodedValues.id}</label>
+                    <input
+                      className="p-2 rounded-2xl border-2 border-red-950"
+                      id="id"
+                      onChange={handleInputValueChange}
+                      placeholder="Enter your id"
+                      type="text"
+                      value={currentStudent.id}
+                    />
+                    {currentStudent.marks.map(({ mark, subject }) => {
                       return (
-                        <div key={subject}>
+                        <div
+                          className="flex flex-col justify-center"
+                          key={subject}
+                        >
                           <label className="px-2">{subject}</label>
                           <input
                             className="p-2 rounded-2xl border-2 border-red-950"
-                            id={subject}
-                            onChange={handleMarks}
-                            placeholder={`Enter your ${subject}`}
+                            onChange={(e) =>
+                              handleMarks(Number(e.target.value), subject)
+                            }
+                            placeholder={`Enter your ${subject} mark`}
                             type="text"
-                            value=""
+                            value={mark && !isNaN(mark) ? mark : ""}
                           />
                         </div>
                       );
                     })}
-                  </>
-        {isPopupOpen && (
-          <Popup>
-            <div className="flex justify-center items-center">
-              <form>
-                <div className="flex flex-col justify-center items-start gap-4">
-                  <label className="px-2">{hardCodedValues.name}</label>
-                  <input
-                    className="p-2 rounded-2xl border-2 border-red-950"
-                    name="name"
-                    onChange={handleInputChange}
-                    placeholder="enter your name"
-                    type="text"
-                    value={currentStudent.name}
-                  />
-                  <label className="px-2">{hardCodedValues.id}</label>
-                  <input
-                    className="p-2 rounded-2xl border-2 border-red-950"
-                    id="id"
-                    onChange={handleInputValueChange}
-                    placeholder="Enter your id"
-                    type="text"
-                    value={currentStudent.id}
-                  />
-                 
-
-                  <button
-                    className="p-2 border border-black bg-green-900 w-full rounded-xl"
-                    type="button"
-                    onClick={handleClosePopup}
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
+                    <Button
+                      onClick={handleSubmit}
+                      text="Submit"
+                      variant={ButtonTypes.primary}
+                      width="w-full"
+                      textColor="text-white"
+                    />
+                  </div>
+                </form>
+              </div>
             </div>
           </Popup>
         )}
         <div className="flex justify-center items-center gap-4">
-          <button
-            className="p-2 border border-black bg-green-900 w-full"
-            type="button"
+          <Button
             onClick={addStudent}
-          >
-            Add Student
-          </button>
-          <button
-            className="p-2 border border-black bg-green-900 w-full whitespace-nowrap"
-            type="button"
+            text="Add Student"
+            width="w-1/2"
+            textColor="text-white"
+            variant={ButtonTypes.secondary}
+          />
+          <Button
             onClick={clearStudentsList}
-          >
-            Clear Students Details
-          </button>
+            text="Clear Students List"
+            textColor="text-white"
+            variant={ButtonTypes.secondary}
+          />
         </div>
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -183,7 +217,7 @@ console.log("object")
                   {header}
                 </th>
               ))}
-              {StudentSubjects.map((subjects, index) => {
+              {studentSubjects.map((subjects, index) => {
                 const key = `${subjects}-${index}`;
                 return <td key={key}>{subjects}</td>;
               })}
@@ -210,20 +244,20 @@ console.log("object")
                   </td>
                 ))}
                 <div className="flex items-center gap-4 py-2">
-                  <button
-                    className="p-2 border border-red-900 w-1/2"
-                    type="button"
-                    onClick={() => {}}
-                  >
-                    Delete
-                  </button>
-                  <button
-                    className="p-2 border border-blue-900 w-1/2"
-                    type="button"
-                    onClick={() => {}}
-                  >
-                    Edit
-                  </button>
+                  <Button
+                    onClick={() => handleDeleteStudent(info.id)}
+                    text="Delete"
+                    outLine="border-red-900"
+                    variant={ButtonTypes.outLined}
+                    width="w-1/2"
+                  />
+                  <Button
+                    onClick={() => handleStudentEditClick(info)}
+                    text="Edit"
+                    outLine="border-blue-900"
+                    variant={ButtonTypes.outLined}
+                    width="w-1/2"
+                  />
                 </div>
               </tr>
             ))}
