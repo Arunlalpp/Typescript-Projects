@@ -5,7 +5,7 @@ import { Popup } from "./PopupModal";
 import { Student } from "../StudentsTypes";
 import Cross from "../assets/Cross.png";
 import Button, { ButtonTypes } from "./Button";
-// import { Input } from "./input";
+import { Input, InputTypes } from "./input";
 
 export default function StudentsDetailsTable() {
   // This is the hardcoded values
@@ -58,7 +58,7 @@ export default function StudentsDetailsTable() {
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target as HTMLInputElement;
+    const { name, value } = event.target;
     setCurrentStudent((prevStudent) => ({
       ...prevStudent,
       [name]: value,
@@ -68,7 +68,7 @@ export default function StudentsDetailsTable() {
   const handleInputValueChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const { id, value } = event.target;
+    const { id, value } = event?.target;
     setCurrentStudent((prevStudent) => ({
       ...prevStudent,
       [id]: value,
@@ -146,11 +146,12 @@ export default function StudentsDetailsTable() {
                       type="text"
                       value={currentStudent.name}
                     />
-                    {/* <Input
+                    <Input
                       onChange={handleInputChange}
                       placeholderText="Enter your name"
                       value={currentStudent.name}
-                    /> */}
+                      
+                    />
                     <label className="px-2">{hardCodedValues.id}</label>
                     <input
                       className="p-2 rounded-2xl border-2 border-red-950"
@@ -160,6 +161,11 @@ export default function StudentsDetailsTable() {
                       type="text"
                       value={currentStudent.id}
                     />
+                    {/* <Input
+                      onChange={handleInputValueChange}
+                      placeholderText="Enter your id"
+                      value={currentStudent.id}
+                    /> */}
                     {currentStudent.marks.map(({ mark, subject }) => {
                       return (
                         <div
@@ -176,6 +182,13 @@ export default function StudentsDetailsTable() {
                             type="text"
                             value={mark && !isNaN(mark) ? mark : ""}
                           />
+                          {/* <Input
+                            onChange={(e) =>
+                              handleMarks(Number(e.target.value), subject)
+                            }
+                            placeholderText={`Enter your ${subject} mark`}
+                            value={mark && !isNaN(mark) ? mark : ""}
+                          /> */}
                         </div>
                       );
                     })}
