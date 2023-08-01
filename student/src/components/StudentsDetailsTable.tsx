@@ -146,12 +146,12 @@ export default function StudentsDetailsTable() {
                       type="text"
                       value={currentStudent.name}
                     />
-                    <Input
+                    {/* <Input
                       onChange={handleInputChange}
                       placeholderText="Enter your name"
                       value={currentStudent.name}
                       
-                    />
+                    /> */}
                     <label className="px-2">{hardCodedValues.id}</label>
                     <input
                       className="p-2 rounded-2xl border-2 border-red-950"
