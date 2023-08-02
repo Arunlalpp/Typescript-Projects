@@ -4,22 +4,18 @@ import React, { useEffect, useState } from "react";
 function App() {
   const [column, setColumn] = useState<string[]>([]);
   const [record, setRecord] = useState<string[]>([]);
-
+  const url = "https://jsonplaceholder.typicode.com/comments";
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((res: any) => {
-        return res.json();
-      })
-      .then((resp) => {
-        console.log(resp);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    fetch(url)
+      .then((response: { json: () => any }) => response.json())
 
-  console.log({ column, record });
+      .then((json: any) => {
+        console.log({ json });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  });
 
   return (
     <div className="bg-slate-700">
