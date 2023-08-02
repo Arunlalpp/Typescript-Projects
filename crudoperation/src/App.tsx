@@ -1,42 +1,31 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { IUser } from "./types";
+import { UserService } from "./endpoint/UserService";
+
+export interface IState {
+  loading: boolean;
+  users: IUser[];
+  errorMessage: string;
+}
 
 function App() {
-  const [column, setColumn] = useState<string[]>([]);
-  const [record, setRecord] = useState<string[]>([]);
-  const url = "https://jsonplaceholder.typicode.com/comments";
-  useEffect(() => {
-    fetch(url)
-      .then((response: { json: () => any }) => response.json())
-
-      .then((json: any) => {
-        console.log({ json });
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+  const [state, setState] = useState<IState>({
+    loading: false,
+    users: [] as IUser[],
+    errorMessage: "",
   });
 
+  // Network request
+  useEffect(() => {
+    UserService.getAllUsers()
+      .then((res) => console.log(res.data))
+      .catch();
+  }, []);
+
   return (
-    <div className="bg-slate-700">
-      <table>
-        <thead>
-          <tr>
-            {column.map((c, i) => (
-              <th key={i}>{c}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {record.map((d, i) => {
-            return (
-              <tr key={i}>
-                <td>{d}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+    <div className="">
+      Welcome
+      <div></div>
     </div>
   );
 }
