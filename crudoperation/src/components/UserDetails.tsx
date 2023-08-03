@@ -15,6 +15,8 @@ function UserDetails() {
     errorMessage: "",
   });
 
+  const [search, setSearch] = useState("");
+
   // Network request
   useEffect(() => {
     setState({ ...state, loading: true });
@@ -31,9 +33,15 @@ function UserDetails() {
 
   const tableHeadData = ["ID", "Name", "User Name", "Email", "Phone"];
   return (
-    <div className="p-8">
+    <div className="p-8 flex flex-col gap-4">
+      <h1 className="text-2xl font-semibold text-center">API FETCHING DATA</h1>
       {errorMessage && <p>{errorMessage}</p>}
       {loading && <p>LOading....</p>}
+      <input
+        type="text"
+        placeholder="Search"
+        className="w-full p-2 border-2 border-gray"
+      />
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr className="bg-white border-b dark:bg-green-500 dark:border-gray-700">
