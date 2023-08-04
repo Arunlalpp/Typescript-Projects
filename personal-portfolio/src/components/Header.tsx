@@ -6,6 +6,8 @@ function Header() {
   useEffect(() => {
     Aos.init();
   }, []);
+
+  const headerNavLinks = ["About", "Service", "Portfolio", "Contact"];
   return (
     <header>
       <div className="container">
@@ -21,18 +23,11 @@ function Header() {
           </div>
           <div className="menu">
             <ul className="flex items-center gap-2.5">
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#about">Service</a>
-              </li>
-              <li>
-                <a href="#about">Portfolio</a>
-              </li>
-              <li>
-                <a href="#about">Contact</a>
-              </li>
+              {headerNavLinks.map((links) => (
+                <li className="text-base font-medium text-violet-700">
+                  <a href={`#${links}`}>{links}</a>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex item-center gap-4r">
