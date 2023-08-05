@@ -1,6 +1,31 @@
 import React from "react";
 
+import SocialMedia from "./SocialMedia";
+import PersonalGrowthDetails from "./PersonalGrowthDetails";
+
 function ContentsUI() {
+  // const data = [
+  //   {
+  //     id: ["#github", "#facebook", "#instagram", "#twitter", "#whatsapp"],
+  //   },
+  //   {
+  //     icon: [
+  //       "ri-github-fill",
+  //       "ri-facebook-circle-fill",
+  //       "ri-instagram-fill",
+  //       "ri-twitter-fill",
+  //       "ri-whatsapp-fill",
+  //     ],
+  //   },
+  // ];
+
+  const personalGrowthData = [
+    {
+      title: [" Years of experience", "Success rate", "Project completed"],
+      endNumber: [2, 80, 249],
+    },
+  ];
+
   return (
     <section className="pt-0" id="about">
       <div className="container pt-14">
@@ -21,7 +46,47 @@ function ContentsUI() {
               I'm Arun lal <br />
               Software Developer
             </h1>
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1800"
+              data-aos-delay="200"
+              className="flex items-center gap-6 mt-7"
+            >
+              <a href="#contact">
+                <button className="bg-violet-700 text-white font-medium flex items-center gap-2 hover:bg-blue-900 ease-in duration-300 py-2 px-4 rounded-lg">
+                  <i className="ri-mail-line"></i>Hire me
+                </button>
+              </a>
+              <a href="#portfolio">
+                <button className="text-violet-700 text-base border-b border-solid font-medium border-blue-900">
+                  <i className="ri-mail-line"></i>see portfolio
+                </button>
+              </a>
+            </div>
+            <p
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              className="flex gap-2 text-blue-900 font-medium text-sm leading-7 sm:pl-14 sm:pr-10"
+            >
+              <span>
+                <i className="ri-apps-line"></i>
+              </span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+              voluptatem nam explicabo quae eveniet modi accusamus voluptatibus
+              nisi alias et deleniti ratione, eligendi, magni dolorum molestias,
+              dolor possimus ducimus. Molestiae!
+            </p>
+            <SocialMedia />
           </div>
+          <div className="basis-1/3 mt-10 sm:mt-0">
+            <figure className="flex items-center">
+              <img
+                src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_people_avatar_man_boy_curly_hair_icon_159362.png"
+                alt=""
+              />
+            </figure>
+          </div>
+          <PersonalGrowthDetails collections={personalGrowthData} />
         </div>
       </div>
     </section>
