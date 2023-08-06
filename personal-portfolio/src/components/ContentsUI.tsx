@@ -4,26 +4,11 @@ import SocialMedia from "./SocialMedia";
 import PersonalGrowthDetails from "./PersonalGrowthDetails";
 
 function ContentsUI() {
-  // const data = [
-  //   {
-  //     id: ["#github", "#facebook", "#instagram", "#twitter", "#whatsapp"],
-  //   },
-  //   {
-  //     icon: [
-  //       "ri-github-fill",
-  //       "ri-facebook-circle-fill",
-  //       "ri-instagram-fill",
-  //       "ri-twitter-fill",
-  //       "ri-whatsapp-fill",
-  //     ],
-  //   },
-  // ];
 
   const personalGrowthData = [
-    {
-      title: [" Years of experience", "Success rate", "Project completed"],
-      endNumber: [2, 80, 249],
-    },
+    { title: "Years of experience", endNumber: 25,suffix:'+' },
+    { title: "Success rate", endNumber: 80,suffix:'%' },
+    { title: "Project completed", endNumber: 249,suffix:'+' },
   ];
 
   return (
@@ -39,7 +24,7 @@ function ContentsUI() {
               Hello Welcome
             </h5>
             <h1
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-duration="1500"
               className="text-slate-900 font-extrabold text-[1.8rem] sm:text-[40px] leading-[35px] sm:leading-[46px] mt-5"
             >
@@ -47,7 +32,7 @@ function ContentsUI() {
               Software Developer
             </h1>
             <div
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-duration="1800"
               data-aos-delay="200"
               className="flex items-center gap-6 mt-7"
