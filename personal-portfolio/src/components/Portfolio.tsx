@@ -19,6 +19,10 @@ function Portfolio() {
     setActiveID(id);
   };
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   useEffect(() => {
     if (selectTab === "all") {
       setPortfolios(defaultPortfolioData);
@@ -104,7 +108,9 @@ function Portfolio() {
           )}
         </div>
       </div>
-      {showModal && <Modal activeID={activeID} openModal={showModal} />}
+      {showModal && (
+        <Modal activeID={activeID} handleShowCloseModal={handleCloseModal} />
+      )}
     </section>
   );
 }
