@@ -8,7 +8,7 @@ import Portfolio from "./components/Portfolio";
 
 function App() {
   return (
-    <div className="w-full h-full">
+    <div className="">
       <Header />
       <main>
         <ContentsUI />
