@@ -4,11 +4,10 @@ import SocialMedia from "./SocialMedia";
 import PersonalGrowthDetails from "./PersonalGrowthDetails";
 
 function ContentsUI() {
-
   const personalGrowthData = [
-    { title: "Years of experience", endNumber: 2,suffix:'+' },
-    { title: "Success rate", endNumber: 80,suffix:'%' },
-    { title: "Project completed", endNumber: 249,suffix:'+' },
+    { title: "Years of experience", endNumber: 2, suffix: "+" },
+    { title: "Success rate", endNumber: 80, suffix: "%" },
+    { title: "Project completed", endNumber: 249, suffix: "+" },
   ];
 
   return (

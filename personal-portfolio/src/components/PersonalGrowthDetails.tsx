@@ -2,9 +2,9 @@ import React from "react";
 import CountUp from "react-countup";
 
 interface Collections {
-  title: string;
   endNumber: number;
-  suffix:string;
+  suffix: string;
+  title: string;
 }
 
 export interface PersonalGrowthDetailsProps {
@@ -17,7 +17,12 @@ function PersonalGrowthDetails({ collections }: PersonalGrowthDetailsProps) {
       {collections.map((items) => (
         <div className="mb-10">
           <h2 className="text-blue-900 font-bold text-3xl">
-            <CountUp start={0} end={items.endNumber} duration={2} suffix={items.suffix} />
+            <CountUp
+              start={0}
+              end={items.endNumber}
+              duration={2}
+              suffix={items.suffix}
+            />
           </h2>
           <h4 className="text-blue-800 font-semibold text-lg">{items.title}</h4>
         </div>
