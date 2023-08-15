@@ -18,14 +18,14 @@ function ContentsUI() {
             <h5
               data-aos="fade-right"
               data-aos-duration="1500"
-              className="text-slate-900 font-semibold text-base"
+              className="text-white font-semibold text-base"
             >
               Hello Welcome
             </h5>
             <h1
               data-aos="fade-up"
               data-aos-duration="1500"
-              className="text-slate-900 font-extrabold text-[1.8rem] sm:text-[40px] leading-[35px] sm:leading-[46px] mt-5"
+              className="text-white font-extrabold text-[1.8rem] sm:text-[40px] leading-[35px] sm:leading-[46px] mt-5"
             >
               I'm Arun lal <br />
               Software Developer
@@ -42,7 +42,7 @@ function ContentsUI() {
                 </button>
               </a>
               <a href="#portfolio">
-                <button className="text-violet-700 text-base border-b border-solid font-medium border-blue-900">
+                <button className="text-white text-base border-b border-solid font-medium border-blue-900 flex items-center gap-2">
                   <i className="ri-mail-line"></i>see portfolio
                 </button>
               </a>
@@ -50,7 +50,7 @@ function ContentsUI() {
             <p
               data-aos="fade-left"
               data-aos-duration="1500"
-              className="flex gap-2 text-blue-900 font-medium text-sm leading-7 sm:pl-14 sm:pr-10"
+              className="flex gap-2 text-white font-medium text-sm leading-7 sm:pl-14 sm:pr-10"
             >
               <span>
                 <i className="ri-apps-line"></i>

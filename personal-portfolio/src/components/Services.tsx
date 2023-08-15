@@ -42,7 +42,7 @@ function Services() {
                     </div>
                   </div>
 
-                  <div className="rounded-full bg-violet-500 border-white border-10 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:-translate-y-0 flex items-center">
+                  <div className="rounded-full bg-violet-500 border-white border-10 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:-translate-y-0 flex items-center place-content-center">
                     <figure>
                       <img src={Frontend} alt="frontend" />
                     </figure>
@@ -70,7 +70,7 @@ function Services() {
                     </div>
                   </div>
 
-                  <div className="rounded-full bg-violet-500 border-white border-10 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:-translate-y-0 flex items-center">
+                  <div className="rounded-full bg-violet-500 border-white border-10 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:-translate-y-0 flex items-center place-content-center  ">
                     <figure>
                       <img src={Frontend} alt="frontend" />
                     </figure>
@@ -98,7 +98,7 @@ function Services() {
                     </div>
                   </div>
 
-                  <div className="rounded-full bg-violet-500 border-white border-10 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:-translate-y-0 flex items-center">
+                  <div className="rounded-full bg-violet-500 border-white border-10 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:-translate-y-0 flex items-center place-content-center">
                     <figure>
                       <img src={Frontend} alt="frontend" />
                     </figure>

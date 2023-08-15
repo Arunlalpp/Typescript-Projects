@@ -12,19 +12,19 @@ function Header() {
     <header>
       <div className="container">
         <div className="flex items-center justify-between">
-          <div className="flex justify-center gap-3">
-            <span className="w-9 h-9 bg-green-600 text-white text-lg font-semibold rounded-full flex items-center justify-center">
+          <div className="flex items-center justify-center gap-3">
+            <span className="w-9 h-9 bg-green-600 text-white text-lg font-semibold rounded-full flex items-center justify-center border-4 border-violet-700 ">
               PCP
             </span>
             <div className="leading-5">
               <h2 className="text-xl text-violet-700 font-bold">Arun lal</h2>
-              <p className="text-base font-medium">Personal</p>
+              <p className="text-base font-medium text-white">Personal</p>
             </div>
           </div>
           <div className="menu">
             <ul className="flex items-center gap-2.5">
               {headerNavLinks.map((links) => (
-                <li className="text-base font-medium text-violet-700">
+                <li className="text-base font-medium text-violet-700 hover:text-white duration-200 ease-in hover:font-bold">
                   <a href={`#${links}`}>{links}</a>
                 </li>
               ))}
