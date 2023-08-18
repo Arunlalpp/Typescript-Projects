@@ -12,7 +12,7 @@ function ReactCarousel({ imageURLs }: ReactCarouselProps) {
   useEffect(() => {
     const a = setTimeout(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex + 1 === imageURLs.length ? 0 : prevIndex + 1
+        prevIndex + 1 === imageURLs.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
     setCurrentTimeout(a);
@@ -43,6 +43,7 @@ function ReactCarousel({ imageURLs }: ReactCarouselProps) {
           src={imageURLs[currentIndex]}
           alt="slider images"
           key={currentIndex}
+          style={{ transformStyle: "flat" }}
         />
       </div>
       <div className="mt-5 flex justify-center gap-5">
@@ -50,7 +51,7 @@ function ReactCarousel({ imageURLs }: ReactCarouselProps) {
           <div
             key={index}
             className={`w-5 h-5 rounded-[50%] bg-red-600 ${
-              currentIndex === index ? "bg-blue-600" : ""
+              currentIndex === index ? "bg-blue-600" : "bg-transparent"
             }`}
             onClick={() => handleDotClick(index)}
           >
