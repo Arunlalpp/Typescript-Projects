@@ -9,6 +9,8 @@ function ReactCarousel({ imageURLs }: ReactCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentTimeout, setCurrentTimeout] = useState<NodeJS.Timeout>();
 
+  // const sliderRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
+
   useEffect(() => {
     console.log({ currentIndex });
 
@@ -43,21 +45,21 @@ function ReactCarousel({ imageURLs }: ReactCarouselProps) {
   };
 
   return (
-    <div className=" rounded-xl h-96 max-h-[650px] m-auto overflow-hidden">
-      <div className="relative">
+    <div className="rounded-xl h-1/2 w-1/2 mx-auto">
+      <div className="flex justify-center items-center">
         <img
-          className="w-full h-full rounded-xl border-solid border-green-800 duration-300 ease-in animate-shimmer"
+          className="w-full h-full rounded-xl border-solid border-green-800 duration-300 ease-in animate-shimmer shadow-xl"
           src={imageURLs[currentIndex]}
           alt="slider images"
           key={currentIndex}
         />
       </div>
-      <div className="mt-5 flex justify-center gap-5">
+      <div className="mt-5 flex justify-center items-center gap-5">
         {imageURLs.map((_, index) => (
           <div
             key={index}
-            className={`w-5 h-5 rounded-[50%]${
-              currentIndex === index ? "bg-blue-600" : "bg-transparent"
+            className={`w-5 h-5 rounded-[50%] place-content-center grid bg-green-800 ${
+              currentIndex < index ? "bg-red-800" : "bg-transparent"
             }`}
             onClick={() => handleDotClick(index)}
           >
