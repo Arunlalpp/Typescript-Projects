@@ -12,8 +12,6 @@ function ReactCarousel({ imageURLs }: ReactCarouselProps) {
   // const sliderRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   useEffect(() => {
-    console.log({ currentIndex });
-
     const a = setTimeout(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex + 1 === imageURLs.length ? 0 : prevIndex + 1
