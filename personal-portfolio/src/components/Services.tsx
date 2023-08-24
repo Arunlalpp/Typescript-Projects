@@ -13,8 +13,6 @@ function Services() {
           <p className="lg:max-w-[600px] lg:mx-auto text-blue-900 font-medium text-base leading-7">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
             voluptatem dolores sed nemo consectetur unde delectus quisquam
-            deserunt suscipit ullam perspiciatis labore amet facilis maiores,
-            ducimus voluptas totam qui? Commodi?
           </p>
         </div>
 
