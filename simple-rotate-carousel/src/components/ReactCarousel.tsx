@@ -8,7 +8,6 @@ export interface ReactCarouselProps {
 function ReactCarousel({ imageURLs }: ReactCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentTimeout, setCurrentTimeout] = useState<NodeJS.Timeout>();
-
   // const sliderRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   useEffect(() => {
@@ -56,7 +55,7 @@ function ReactCarousel({ imageURLs }: ReactCarouselProps) {
         {imageURLs.map((_, index) => (
           <div
             key={index}
-            className={`w-5 h-5 rounded-[50%] place-content-center grid bg-green-800 ${
+            className={`w-5 h-5 rounded-[50%] place-content-center grid bg-green-900 ${
               currentIndex < index ? "bg-red-800" : "bg-transparent"
             }`}
             onClick={() => handleDotClick(index)}
