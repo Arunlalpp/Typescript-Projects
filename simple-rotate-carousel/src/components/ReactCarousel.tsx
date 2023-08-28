@@ -1,4 +1,3 @@
-// import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 
 export interface ReactCarouselProps {
