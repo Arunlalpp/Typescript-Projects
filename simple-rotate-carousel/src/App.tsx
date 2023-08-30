@@ -1,5 +1,6 @@
 import React from "react";
 import SliderTwo from "./components/SliderTwo";
+import SliderOne from "./components/SlidereOne";
 // import ReactCarousel from "./components/ReactCarousel";
 
 // const images = [
@@ -17,11 +18,12 @@ function App() {
   return (
     <div className="w-screen h-screen">
       {/* <ReactCarousel imageURLs={images} /> */}
-      <SliderTwo
+      {/* <SliderTwo
         bgURL="https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=600"
         header="Sample"
         collections={collectionData}
-      />
+      /> */}
+      <SliderOne bgURL="https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=600" />
     </div>
   );
 }
