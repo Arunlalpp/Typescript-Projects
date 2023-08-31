@@ -16,7 +16,7 @@ function SliderOne({ bgURL }: SliderOneProps) {
           backgroundSize: "cover",
         }}
       >
-        <p className="text-white text-left font-medium text-xs">
+        <p className="text-white text-center font-medium text-xs">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum
           aliquid quas distinctio quam assumenda quibusdam, odit voluptas. Sit
           obcaecati laudantium voluptate earum libero quidem quibusdam facilis.
