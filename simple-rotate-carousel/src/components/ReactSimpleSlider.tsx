@@ -47,7 +47,7 @@ function ReactSimpleSlider({ bgURL, imageURLs }: ReactSimpleSliderProps) {
                 alt="slider images"
                 key={currentIndex}
                 style={{
-                  transform: `translateX(-${currentIndex}px)`,
+                  transform: `translateX(-${currentIndex * 100}%)`,
                 }}
               />
             </div>
