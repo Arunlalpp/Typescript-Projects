@@ -42,7 +42,7 @@ function ReactSimpleSlider({ bgURL, imageURLs }: ReactSimpleSliderProps) {
             </button>
             <div>
               <img
-                className="w-full h-1/2 rounded-xl border-solid border-green-800 shadow-xl"
+                className="w-full h-1/2 rounded-xl border-solid border-green-800"
                 src={imageURLs[currentIndex]}
                 alt="slider images"
                 key={currentIndex}
