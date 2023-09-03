@@ -1,80 +1,96 @@
 import React, { useState } from "react";
 
-export interface ReactSimpleSliderProps {
-  bgURL: string;
-  imageURLs: string[];
-}
+import leftArrow from "../assets/LeftArrow.svg";
+import rightArrow from "../assets/RightArrow.svg";
+import SliderTwo, { ScreenTypes } from "./SliderTwo";
 
-function ReactSimpleSlider({ bgURL, imageURLs }: ReactSimpleSliderProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+function ReactSimpleSlider() {
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleLeftClick = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 1 === imageURLs.length ? 0 : prevIndex + 1
-    );
+  const handleLeftButtonClick = () => {
+    if (activeIndex !== 0) {
+      setActiveIndex(activeIndex - 1);
+    }
+  };
+  const handleRightButtonClick = () => {
+    if (activeIndex !== 2) {
+      setActiveIndex(activeIndex + 1);
+    }
   };
 
-  const handleRightClick = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - 1 < 0 ? imageURLs.length - 1 : prevIndex - 1
-    );
-  };
+  const SliderData = [
+    {
+      type: ScreenTypes.Initial,
+      bgImg:
+        "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "Welcome to the Page",
+    },
+    {
+      type: ScreenTypes.Second,
+      bgImg:
+        "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "Notes",
+    },
+    {
+      type: ScreenTypes.Final,
+      bgImg:
+        ";https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "Last One",
+    },
+  ];
 
   return (
-    <div className="h-screen w-screen">
+    <div className="bg-transparent w-full h-full relative flex flex-col items-center justify-center overflow-hidden">
       <div
-        className="w-full h-full relative"
+        className="whitespace-nowrap transition-transform duration-30 w-full h-full"
         style={{
-          backgroundImage: `url(${bgURL})`,
-          backgroundPosition: "bottom",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          scrollBehavior: "smooth",
+          transform: `translateX(-${activeIndex * 100}%)`,
+          userSelect: "none",
         }}
       >
-        <div className="flex justify-end flex-col h-full w-full absolute">
-          <div className="flex justify-center items-center gap-8">
-            <button
-              type="button"
-              onClick={handleLeftClick}
-              className="text-green-900"
+        {SliderData.map((sliderScreenData, index) => {
+          const key = sliderScreenData.type + index;
+          return (
+            <div
+              key={key}
+              className="inline-flex items-center justify-center h-full w-full"
             >
-              left
-            </button>
-            <div>
-              <img
-                className="w-full h-1/2 rounded-xl border-solid border-green-800"
-                src={imageURLs[currentIndex]}
-                alt="slider images"
-                key={currentIndex}
-                style={{
-                  transform: `translateX(-${currentIndex}px)`,
-                }}
+              <SliderTwo
+                title={sliderScreenData.title}
+                screenType={sliderScreenData.type}
+                bgImg={sliderScreenData.bgImg}
               />
             </div>
-            {imageURLs.map((_, index) => (
-              <div
-                key={index}
-                className={`${
-                  currentIndex < index
-                    ? "bg-red-600 rounded-[50%] place-content-center w-5 h-5"
-                    : "bg-yellow-900 rounded-[50%] place-content-center w-5 h-5"
-                }`}
-              >
-                {index}
-              </div>
-            ))}
-            <button
-              type="button"
-              onClick={handleRightClick}
-              className="text-red-900"
-            >
-              right
-            </button>
+          );
+        })}
+      </div>
+      <div className="h-fit w-full px-5 absolute bottom-10 z-20 bg-transparent">
+        <div className="w-full h-full bg-[#ffffff80] flex justify-between items-center gap-3 px-5 py-4 rounded-enlarge">
+          <button onClick={handleLeftButtonClick} type="button">
+            <img className="w-10 h-10" src={leftArrow} alt="left arrow" />
+          </button>
+          <div className="flex">
+            {SliderData.map((sliderScreenData, index) => {
+              const dotIcon = activeIndex === index ? "." : "0";
+
+              return (
+                // <img
+                //   className="px-2"
+                //   key={sliderScreenData.type}
+                //   src={dotIcon}
+                //   alt="dot icon"
+                // />
+                <div className={dotIcon} key={sliderScreenData.type}></div>
+              );
+            })}
           </div>
+          <button onClick={handleRightButtonClick} type="button">
+            <img className="w-10 h-10" src={rightArrow} alt="right arrow" />
+          </button>
         </div>
       </div>
     </div>
   );
 }
-
 export default ReactSimpleSlider;
