@@ -31,9 +31,8 @@ function SliderOne() {
       <ul className="font-regular p-5 flex flex-col gap-4 list-disc">
         {testData.slice(0, currentIndex).map((sentence, index) => {
           const listItemStyle = classNames("", {
-            "marker:text-main-grey-3": currentIndex - 1 === index,
-            "marker:text-nw-grey-type":
-              currentIndex - 1 !== index || isLastIndex,
+            "marker:text-red-400": currentIndex - 1 === index,
+            "marker:text-green-800": currentIndex - 1 !== index || isLastIndex,
           });
 
           return (

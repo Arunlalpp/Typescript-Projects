@@ -75,12 +75,6 @@ function ReactSimpleSlider() {
               const dotIcon = activeIndex === index ? "." : "0";
 
               return (
-                // <img
-                //   className="px-2"
-                //   key={sliderScreenData.type}
-                //   src={dotIcon}
-                //   alt="dot icon"
-                // />
                 <div className={dotIcon} key={sliderScreenData.type}></div>
               );
             })}
