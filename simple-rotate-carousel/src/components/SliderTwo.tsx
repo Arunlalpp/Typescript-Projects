@@ -17,7 +17,7 @@ function SliderTwo({ title, screenType, bgImg }: Props) {
   const render = () => {
     if (screenType === ScreenTypes.Initial) {
       return (
-        <div className="p-5 text-center">
+        <div className="p-5 text-center text-white">
           SampleText
           <br />
           <br />
@@ -28,16 +28,14 @@ function SliderTwo({ title, screenType, bgImg }: Props) {
     if (screenType === ScreenTypes.Final) {
       return (
         <div className="p-5 text-center">
-          <p className="text-body-large font-medium text-nw-grey-type px-4">
-            Dummy
-          </p>
+          <p className="text-body-large font-medium text-red-800 px-4">Dummy</p>
           <div className="flex flex-col items-center justify-center pb-3 pt-7 px-6">
             <img
               className="pb-3"
               src="https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="internet"
             />
-            <p className="font-bold text-nw-grey-type">DummyOne</p>
+            <p className="font-bold text-red-800">DummyOne</p>
           </div>
           <div className="flex flex-col items-center justify-center pb-3 pt-7 px-6">
             <img
@@ -45,7 +43,7 @@ function SliderTwo({ title, screenType, bgImg }: Props) {
               src="https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="DND"
             />
-            <p className="font-bold text-nw-grey-type">2.DummyTwo</p>
+            <p className="font-bold text-red-800">2.DummyTwo</p>
           </div>
         </div>
       );
@@ -64,14 +62,14 @@ function SliderTwo({ title, screenType, bgImg }: Props) {
     >
       <div className="w-full pt-10 flex items-center justify-end">
         <button
-          className="py-4 font-semibold text-callout-02 text-nw-grey-type"
+          className="py-4 font-semibold text-callout-02 text-white"
           type="button"
         >
           Skip
         </button>
       </div>
       <div className="w-full px-14 pb-5">
-        <p className="text-heading-04 font-semibold text-center">{title}</p>
+        <p className="text-md text-white font-semibold text-center">{title}</p>
       </div>
       {render()}
     </div>
