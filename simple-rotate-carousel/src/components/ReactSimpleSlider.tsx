@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import leftArrow from "../assets/LeftArrow.svg";
 import rightArrow from "../assets/RightArrow.svg";
+import ActiveDot from "../assets/ActiveDot.png";
+import InactiveActiveDot from "../assets/InactiveDot.png";
 import SliderTwo, { ScreenTypes } from "./SliderTwo";
 
 function ReactSimpleSlider() {
@@ -34,7 +36,7 @@ function ReactSimpleSlider() {
     {
       type: ScreenTypes.Final,
       bgImg:
-        ";https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       title: "Last One",
     },
   ];
@@ -72,10 +74,16 @@ function ReactSimpleSlider() {
           </button>
           <div className="flex">
             {SliderData.map((sliderScreenData, index) => {
-              const dotIcon = activeIndex === index ? "." : "0";
+              const dotIcon =
+                activeIndex === index ? InactiveActiveDot : ActiveDot;
 
               return (
-                <div className={dotIcon} key={sliderScreenData.type}></div>
+                <img
+                  className="px-2 w-14 h-14"
+                  key={sliderScreenData.type}
+                  src={dotIcon}
+                  alt="dot icon"
+                />
               );
             })}
           </div>

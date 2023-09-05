@@ -21,7 +21,7 @@ function SliderTwo({ title, screenType, bgImg }: Props) {
           SampleText
           <br />
           <br />
-          SampleText@
+          SampleText
         </div>
       );
     }
@@ -43,7 +43,7 @@ function SliderTwo({ title, screenType, bgImg }: Props) {
               src="https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="DND"
             />
-            <p className="font-bold text-red-800">2.DummyTwo</p>
+            <p className="font-bold text-red-800">DummyTwo</p>
           </div>
         </div>
       );
