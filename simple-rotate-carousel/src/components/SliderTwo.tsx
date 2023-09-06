@@ -7,28 +7,37 @@ export enum ScreenTypes {
   Final = "final",
 }
 
-interface Props {
+interface SliderTwoProps {
   title: string;
   screenType: ScreenTypes;
   bgImg: string;
 }
 
-function SliderTwo({ title, screenType, bgImg }: Props) {
+function SliderTwo({ title, screenType, bgImg }: SliderTwoProps) {
   const render = () => {
     if (screenType === ScreenTypes.Initial) {
       return (
-        <div className="p-5 text-center text-white">
-          SampleText
+        <div className="p-5 text-center text-green-300 font-bold text-xl">
           <br />
+          Welcome to the Slider world
           <br />
-          SampleText
+        </div>
+      );
+    }
+
+    if (screenType === ScreenTypes.Second) {
+      return (
+        <div className="w-full h-full pb-32">
+          <SliderOne />
         </div>
       );
     }
     if (screenType === ScreenTypes.Final) {
       return (
         <div className="p-5 text-center">
-          <p className="text-body-large font-medium text-red-800 px-4">Dummy</p>
+          <p className="text-body-large font-medium text-green-700 px-4">
+            Dummy
+          </p>
           <div className="flex flex-col items-center justify-center pb-3 pt-7 px-6">
             <img
               className="pb-3"
@@ -48,11 +57,10 @@ function SliderTwo({ title, screenType, bgImg }: Props) {
         </div>
       );
     }
-    return (
-      <div className="w-full h-full pb-32">
-        <SliderOne />
-      </div>
-    );
+  };
+
+  const onButtonClickRemoveHighlightColor = {
+    WebkitTapHighlightColor: "transparent",
   };
 
   return (
@@ -62,14 +70,15 @@ function SliderTwo({ title, screenType, bgImg }: Props) {
     >
       <div className="w-full pt-10 flex items-center justify-end">
         <button
-          className="py-4 font-semibold text-callout-02 text-white"
+          className="py-4 font-semibold text-lg text-green-500"
           type="button"
+          style={onButtonClickRemoveHighlightColor}
         >
           Skip
         </button>
       </div>
       <div className="w-full px-14 pb-5">
-        <p className="text-md text-white font-semibold text-center">{title}</p>
+        <p className="text-xl text-green-900 font-bold text-center">{title}</p>
       </div>
       {render()}
     </div>
