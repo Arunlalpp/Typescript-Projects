@@ -1,45 +1,67 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import leftArrow from "../assets/LeftArrow.svg";
 import rightArrow from "../assets/RightArrow.svg";
 import ActiveDot from "../assets/ActiveDot.png";
 import InactiveActiveDot from "../assets/InactiveDot.png";
+import bg1 from "../assets/bg-1.jpg";
+import bg2 from "../assets/bg-2.jpg";
+import bg3 from "../assets/bg-3.jpg";
+
 import SliderTwo, { ScreenTypes } from "./SliderTwo";
 
 function ReactSimpleSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [currentTimeout, setCurrentTimeout] = useState<NodeJS.Timeout>();
+
+  const SliderData = [
+    {
+      type: ScreenTypes.Initial,
+      bgImg: bg1,
+      title: "Welcome",
+    },
+    {
+      type: ScreenTypes.Second,
+      bgImg: bg2,
+      title: "Notes",
+    },
+    {
+      type: ScreenTypes.Final,
+      bgImg: bg3,
+      title: "Explore",
+    },
+  ];
+
+  useEffect(() => {
+    const currentTimeout = setTimeout(() => {
+      setActiveIndex((prevIndex) =>
+        prevIndex + 1 === SliderData.length ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => {
+      clearTimeout(currentTimeout);
+      setCurrentTimeout(currentTimeout);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIndex]);
 
   const handleLeftButtonClick = () => {
     if (activeIndex !== 0) {
       setActiveIndex(activeIndex - 1);
+      clearTimeout(currentTimeout);
     }
   };
   const handleRightButtonClick = () => {
     if (activeIndex !== 2) {
       setActiveIndex(activeIndex + 1);
+      clearTimeout(currentTimeout);
     }
   };
 
-  const SliderData = [
-    {
-      type: ScreenTypes.Initial,
-      bgImg:
-        "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Welcome to the Page",
-    },
-    {
-      type: ScreenTypes.Second,
-      bgImg:
-        "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Notes",
-    },
-    {
-      type: ScreenTypes.Final,
-      bgImg:
-        "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Last One",
-    },
-  ];
+  const onButtonClickRemoveHighlightColor = {
+    WebkitTapHighlightColor: "transparent",
+  };
 
   return (
     <div className="bg-transparent w-full h-full relative flex flex-col items-center justify-center overflow-hidden">
@@ -68,9 +90,13 @@ function ReactSimpleSlider() {
         })}
       </div>
       <div className="h-fit w-full px-5 absolute bottom-10 z-20 bg-transparent">
-        <div className="w-full h-full bg-[#ffffff80] flex justify-between items-center gap-3 px-5 py-4 rounded-enlarge">
-          <button onClick={handleLeftButtonClick} type="button">
-            <img className="w-10 h-10" src={leftArrow} alt="left arrow" />
+        <div className="w-full h-full bg-[#ffffff80] flex justify-between items-center gap-3 px-5 py-4 rounded-xl shadow-xl">
+          <button
+            onClick={handleLeftButtonClick}
+            type="button"
+            style={onButtonClickRemoveHighlightColor}
+          >
+            <img className="w-7 h-7" src={leftArrow} alt="left arrow" />
           </button>
           <div className="flex">
             {SliderData.map((sliderScreenData, index) => {
@@ -79,7 +105,7 @@ function ReactSimpleSlider() {
 
               return (
                 <img
-                  className="px-2 w-14 h-14"
+                  className="px-2 w-11 h-8"
                   key={sliderScreenData.type}
                   src={dotIcon}
                   alt="dot icon"
@@ -87,8 +113,12 @@ function ReactSimpleSlider() {
               );
             })}
           </div>
-          <button onClick={handleRightButtonClick} type="button">
-            <img className="w-10 h-10" src={rightArrow} alt="right arrow" />
+          <button
+            onClick={handleRightButtonClick}
+            type="button"
+            style={onButtonClickRemoveHighlightColor}
+          >
+            <img className="w-7 h-7" src={rightArrow} alt="right arrow" />
           </button>
         </div>
       </div>

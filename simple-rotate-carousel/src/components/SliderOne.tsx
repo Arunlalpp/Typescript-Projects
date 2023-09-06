@@ -4,6 +4,7 @@ import classNames from "classnames";
 function SliderOne() {
   const testData = [
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente eos sint laborum earum ea officia. Nemo id, excepturi, ex illum enim temporibus magnam officia non doloremque consequatur dolores sit numquam.",
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente eos sint laborum earum ea officia. Nemo id, excepturi, ex illum enim temporibus magnam officia non doloremque consequatur dolores sit numquam.",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,11 +28,11 @@ function SliderOne() {
   }, [currentIndex, isLastIndex, testData.length]);
 
   return (
-    <div className="w-full h-full bg-white rounded-medium drop-shadow-lg pl-5">
+    <div className="w-full h-full bg-white rounded-medium drop-shadow-lg pl-5 rounded-xl">
       <ul className="font-regular p-5 flex flex-col gap-4 list-disc">
         {testData.slice(0, currentIndex).map((sentence, index) => {
           const listItemStyle = classNames("", {
-            "marker:text-red-400": currentIndex - 1 === index,
+            "marker:text-red-900": currentIndex - 1 === index,
             "marker:text-green-800": currentIndex - 1 !== index || isLastIndex,
           });
 
