@@ -28,7 +28,7 @@ function SliderOne() {
   }, [currentIndex, isLastIndex, testData.length]);
 
   return (
-    <div className="w-full h-full bg-white rounded-medium drop-shadow-lg pl-5 rounded-xl">
+    <div className="w-full h-full bg-gray-400 rounded-medium drop-shadow-lg pl-5 rounded-xl">
       <ul className="font-regular p-5 flex flex-col gap-4 list-disc">
         {testData.slice(0, currentIndex).map((sentence, index) => {
           const listItemStyle = classNames("", {
