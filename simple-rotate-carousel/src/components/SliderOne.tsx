@@ -33,7 +33,7 @@ function SliderOne() {
         {testData.slice(0, currentIndex).map((sentence, index) => {
           const listItemStyle = classNames("", {
             "marker:text-red-900": currentIndex - 1 === index,
-            "marker:text-green-800": currentIndex - 1 !== index || isLastIndex,
+            "marker:text-green-900": currentIndex - 1 !== index || isLastIndex,
           });
 
           return (
