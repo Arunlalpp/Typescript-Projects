@@ -33,8 +33,6 @@ export default function StudentsDetails() {
 
   const handleAddStudent = () => {
     setStudentsInfo([...studentsInfo, currentStudent]);
-    console.log({ currentStudent });
-
     setCurrentStudent(initialStudentsInfo);
   };
 
