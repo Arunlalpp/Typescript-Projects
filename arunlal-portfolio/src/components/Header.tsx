@@ -26,7 +26,7 @@ export default function Header() {
         </div>
         <div className="col-span-2 border-r border-gray-30 dark:border-gray-500 min-[896px]:col-span-3"></div>
         <div className="col-span-2 hidden border-r border-t border-gray-30 dark:border-gray-500 max-md:order-last lg:col-span-1 lg:block lg:border-t-0"></div>
-        <div className="col-span-10 hidden flex-col items-end justify-end border-x border-t border-gray-30 bg-gradient-to-br from-gray-30/30 via-white to-white p-8 text-right dark:border-gray-500 dark:from-gray-700 dark:via-gray-1000 dark:to-gray-1000 md:col-span-6 md:flex md:border-l-0 md:border-t-0 min-[896px]:col-span-5 lg:col-span-4">
+        <div className="col-span-10 hidden flex-col items-end justify-end border-x border-t border-gray-30 bg-gradient-to-br from-gray-30/30 via-white to-white p-8 text-right dark:border-gray-500 dark:from-gray-800 dark:via-gray-1000 dark:to-gray-1000 md:col-span-6 md:flex md:border-l-0 md:border-t-0 min-[896px]:col-span-5 lg:col-span-4">
           <div className="mb-4 w-full border-b border-gray-30 pb-4 text-sm font-bold uppercase text-gray-1000 dark:border-gray-500 dark:text-gray-200">
             Recent favorite
           </div>
